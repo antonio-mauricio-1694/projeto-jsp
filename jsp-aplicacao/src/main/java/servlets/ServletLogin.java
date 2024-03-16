@@ -40,7 +40,7 @@ public class ServletLogin extends HttpServlet {
 			if(modelLogin.getLogin().equalsIgnoreCase("adm") && modelLogin.getSenha().equalsIgnoreCase("adm")) {
 				
 				request.getSession().setAttribute("usuario", modelLogin.getLogin());
-				RequestDispatcher redirecionar =  request.getRequestDispatcher("paginaPrincipal/principal.jsp");
+				RequestDispatcher redirecionar =  request.getRequestDispatcher("principal/principal.jsp");
 				redirecionar.forward(request, response);
 			}else {
 				RequestDispatcher redirecionar =  request.getRequestDispatcher("index.jsp");
