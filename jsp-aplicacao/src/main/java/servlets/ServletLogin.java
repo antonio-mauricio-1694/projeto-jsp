@@ -1,5 +1,6 @@
 package servlets;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -38,9 +39,19 @@ public class ServletLogin extends HttpServlet {
 			
 			if(modelLogin.getLogin().equalsIgnoreCase("adm") && modelLogin.getSenha().equalsIgnoreCase("adm")) {
 				
+				request.getSession().setAttribute("usuario", modelLogin.getLogin());
+				RequestDispatcher redirecionar =  request.getRequestDispatcher("paginaPrincipal/principal.jsp");
+				redirecionar.forward(request, response);
 			}else {
+				RequestDispatcher redirecionar =  request.getRequestDispatcher("index.jsp");
+				request.setAttribute("msg", "informe o loginm e senha corretamente");
+				redirecionar.forward(request, response);
 				
 			}
+		}else {
+			RequestDispatcher redirecionar =  request.getRequestDispatcher("index.jsp");
+			request.setAttribute("msg", "informe o loginm e senha corretamente");
+			redirecionar.forward(request, response);
 		}
 	}
 
