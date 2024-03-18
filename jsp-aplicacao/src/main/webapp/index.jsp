@@ -10,6 +10,8 @@
 <h1>mauricio isis lucas</h1>
 
 <form action="ServletLogin" method="post">
+
+<input type="hidden" value="<%= request.getAttribute("url")%>" name="url">
 <table>
 <tr>
 <td>

@@ -10,7 +10,7 @@ import model.ModelLogin;
 
 import java.io.IOException;
 
-import javax.management.modelmbean.ModelMBean;
+
 
 @WebServlet
 public class ServletLogin extends HttpServlet {
@@ -31,6 +31,7 @@ public class ServletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
+		String url = request.getParameter("url");
 		
 		if(login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) {
 			ModelLogin modelLogin = new ModelLogin();
@@ -40,10 +41,18 @@ public class ServletLogin extends HttpServlet {
 			if(modelLogin.getLogin().equalsIgnoreCase("adm") && modelLogin.getSenha().equalsIgnoreCase("adm")) {
 				
 				request.getSession().setAttribute("usuario", modelLogin.getLogin());
-				RequestDispatcher redirecionar =  request.getRequestDispatcher("principal/principal.jsp");
+				
+				if(url == null || url.contentEquals("null")) {
+					
+					url = "principal/principal.jsp";
+					
+				}
+				RequestDispatcher redirecionar =  request.getRequestDispatcher(url);
 				redirecionar.forward(request, response);
 			}else {
-				RequestDispatcher redirecionar =  request.getRequestDispatcher("index.jsp");
+				
+				
+				RequestDispatcher redirecionar =  request.getRequestDispatcher("/index.jsp");
 				request.setAttribute("msg", "informe o loginm e senha corretamente");
 				redirecionar.forward(request, response);
 				
