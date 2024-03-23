@@ -7,6 +7,14 @@
   <packaging>war</packaging>
   <name>jsp-aplicacao</name>
   <description>jsp-aplicacao</description>
+  
+  <dependencies>
+	<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.4.1211</version>
+</dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
