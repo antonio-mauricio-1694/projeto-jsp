@@ -9,20 +9,30 @@
 <body>
 	<h1>Criação do sistema jsp</h1>
 
-	<form action="/ServletLogin">
+	<form action="ServletLogin" method="post">
 
 		<table>
 
 			<tr>
 
-				<td>
-				<input>
-				</td>
+				<td><label>login</label> <input type="text" name="login"></td>
+			</tr>
+
+			<tr>
+
+				<td><label>senha</label> <input type="password" name="password"></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" name="acessar"></td>
 			</tr>
 
 		</table>
 
+
+
 	</form>
+	<h5>${msg}</h5>
 
 </body>
 </html>
