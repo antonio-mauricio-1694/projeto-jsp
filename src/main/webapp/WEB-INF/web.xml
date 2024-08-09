@@ -19,4 +19,13 @@
     <servlet-name>ServletsLogin</servlet-name>
     <url-pattern>/ServletsLogin</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>FilterAtenticar</display-name>
+    <filter-name>FilterAtenticar</filter-name>
+    <filter-class>filter.FilterAtenticar</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterAtenticar</filter-name>
+    <url-pattern>/FilterAtenticar</url-pattern>
+  </filter-mapping>
 </web-app>
