@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class SigleConnection {
 	
-	private static String banco = "jdbc:postgresql://localhost:5432/jspdb?autoReconnect=true";
+	private static String banco = "jdbc:postgresql://localhost:5432/bancojsp?autoReconnect=true";
 	private static String user = "postgres";
 	private static String password = "isluc";
 	private static Connection connection = null;
